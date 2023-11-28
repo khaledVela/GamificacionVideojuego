@@ -5,7 +5,7 @@ from apiejemplo.models import Desafios
 
 
 class Estrellas2(models.Model):
-    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='usuario')
+    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='usuariodesafio')
     desafio = models.ForeignKey(Desafios, on_delete=models.CASCADE, related_name='desafios')
     estrellas = models.IntegerField()
 

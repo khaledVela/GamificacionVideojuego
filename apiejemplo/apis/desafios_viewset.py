@@ -1,8 +1,9 @@
 from rest_framework import viewsets, serializers, status
 from rest_framework.response import Response
 
-from apiejemplo.apis import EstrellasSerializer
+from apiejemplo.apis.simple_serializers import EstrellasSerializer
 from apiejemplo.models import Desafios
+
 
 class DesafiosSerializer(serializers.ModelSerializer):
     estrellas = EstrellasSerializer(read_only=True)

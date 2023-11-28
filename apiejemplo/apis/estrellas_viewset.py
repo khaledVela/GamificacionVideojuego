@@ -1,8 +1,9 @@
 from rest_framework import viewsets, serializers, status
 from rest_framework.response import Response
 
-from apiejemplo.apis import CustomUserSerializer, NivelesSerializer, DefinEstrella
-from apiejemplo.models import *
+from apiejemplo.apis import CustomUserSerializer, NivelesSerializer
+from apiejemplo.apis.funciones import DefinEstrella
+from apiejemplo.models import Estrellas
 
 
 class EstrellasSerializer(serializers.ModelSerializer):

@@ -5,7 +5,7 @@ from apiejemplo.models import Niveles
 
 
 class Estrellas(models.Model):
-    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='usuario')
+    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='usuarionivel')
     nivel = models.ForeignKey(Niveles, on_delete=models.CASCADE, related_name='nivel')
     estrellas = models.IntegerField()
 

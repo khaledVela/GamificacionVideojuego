@@ -1,7 +1,8 @@
 from rest_framework import viewsets, serializers, status
 from rest_framework.response import Response
 
-from apiejemplo.apis import CustomUserSerializer, DefinEstrella, DesafiosSerializer
+from apiejemplo.apis import CustomUserSerializer, DesafiosSerializer
+from apiejemplo.apis.funciones import DefinEstrella
 from apiejemplo.models import *
 
 

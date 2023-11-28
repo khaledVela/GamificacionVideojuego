@@ -9,11 +9,11 @@ class nivelesSerializer(serializers.ModelSerializer):
     planeta = PlanetasSerializer(read_only=True)
     planeta_id = serializers.IntegerField(write_only=True)
     class Meta:
-        model = niveles
+        model = Niveles
         fields = '__all__'
 
 class nivelesViewset(viewsets.ModelViewSet):
-    queryset = niveles.objects.all()
+    queryset = Niveles.objects.all()
     serializer_class = nivelesSerializer
 
     def create(self, request, *args, **kwargs):
