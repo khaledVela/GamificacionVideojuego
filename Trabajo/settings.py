@@ -139,8 +139,7 @@ AUTH_USER_MODEL = 'apiejemplo.CustomUser'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
-    'https://mindfeedbo.onrender.com',
-    'https://instituciones-mindfeedbo.onrender.com',
+    'https://localhost:5173',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
