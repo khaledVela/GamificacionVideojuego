@@ -27,12 +27,15 @@ class CustomUserViewSet(viewsets.ModelViewSet):
             return Response(status=status.HTTP_401_UNAUTHORIZED)
 
     def create(self, request, *args, **kwargs):
-        CustomUser.objects.create_user(username=request.data['username'],
-                                        email= request.data['email'],
-                                        password=request.data['password'],
-                                        tipo = request.data['2'],
-                                        is_active=True)
-        return  HttpResponse("¡Hola, mundo!")
+        CustomUser.objects.create_user(
+            username=request.data['username'],
+            email=request.data['email'],
+            password=request.data['password'],
+            tipo=request.data['2'],
+            last_level=1,
+            vidaslvl=3,
+            is_active=True)
+        return HttpResponse("¡Hola, mundo!")
 
     def update(self, request, *args, **kwargs):
         if request.user.id == kwargs['pk'] or request.user.tipo == '1':
@@ -61,6 +64,6 @@ class CustomUserViewSet(viewsets.ModelViewSet):
     @action(detail=False, methods=['post'], url_path='buscar_usuario')
     def buscar_usuario(self, request):
         query = request.POST.get('q', '')
-        usuarios = CustomUser.objects.filter(username__startswith = query)
+        usuarios = CustomUser.objects.filter(username__startswith=query)
         serializer = CustomUserSerializer(usuarios, many=True)
         return Response(serializer.data)
